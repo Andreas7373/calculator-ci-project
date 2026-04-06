@@ -40,4 +40,18 @@ public class CalculatorTests
     {
         Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10, 0));
     }
+
+    [Fact]
+    public void Add_WithNegativeNumbers()
+    {
+        var result = _calculator.Add(-2, -3);
+        Assert.Equal(-5, result);
+    }
+
+    [Fact]
+    public void Multiply_WithZero()
+    {
+        var result = _calculator.Multiply(5, 0);
+        Assert.Equal(0, result);
+    }
 }
